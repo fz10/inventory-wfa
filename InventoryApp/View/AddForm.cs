@@ -68,6 +68,8 @@ namespace InventoryApp.View
 
                 this.Close();
             }
+
+
         }
 
 

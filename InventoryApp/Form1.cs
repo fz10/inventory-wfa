@@ -33,6 +33,45 @@ namespace InventoryApp
             }
         }
 
+        private void FilterByName()
+        {
+            using (InventoryEntities db = new InventoryEntities())
+            {
+                var lst = from d in db.items
+                          where d.PRODUCT.ToLower().Contains(NameFilterBox.Text.ToLower())
+                          select d;
+                dataGridView1.DataSource = lst.ToList();
+                minimum.Value = 1;
+                maximum.Value = 1;
+            }
+        }
+
+        private void FilterByQuantity()
+        {
+            using (InventoryEntities db = new InventoryEntities())
+            {
+                var lst = from d in db.items
+                          where d.QUANTITY >= minimum.Value && d.QUANTITY <= maximum.Value
+                          select d;
+                dataGridView1.DataSource = lst.ToList();
+                NameFilterBox.Text = "";
+            }
+        }
+
+        private void FilterByDate()
+        {
+            using (InventoryEntities db = new InventoryEntities())
+            {
+                var lst = from d in db.items
+                          where d.MODIFIED_DATE >= FromFilter.Value && d.MODIFIED_DATE <= ToFilter.Value
+                          select d;
+                dataGridView1.DataSource = lst.ToList();
+                NameFilterBox.Text = "";
+                minimum.Value = 1;
+                maximum.Value = 1;
+            }
+        }
+
         private int? GetId()
         {
             try
@@ -84,6 +123,65 @@ namespace InventoryApp
                 confirm.ShowDialog();
                 RefreshData();
             }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void NameFilterBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ToFilter_ValueChanged(object sender, System.EventArgs e)
+        {
+        }
+
+        private void FromFilter_ValueChanged(object sender, System.EventArgs e)
+        {
+
+        }
+
+        private void maximum_ValueChanged(object sender, System.EventArgs e)
+        {
+
+        }
+
+        private void minimum_ValueChanged(object sender, System.EventArgs e)
+        {
+
+        }
+
+        private void ProductFilter_Click(object sender, EventArgs e)
+        {
+            if(NameFilterBox.Text != "")
+                FilterByName();
+        }
+
+        private void QuantityFilter_Click(object sender, EventArgs e)
+        {
+            if(minimum.Value < maximum.Value)
+                FilterByQuantity();
+        }
+
+
+        private void DateFilter_Click(object sender, EventArgs e)
+        {
+            if (FromFilter.Value < ToFilter.Value)
+                Console.Write(FromFilter.Value);
+                FilterByDate();
         }
     }
 }

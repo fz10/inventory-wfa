@@ -69,7 +69,17 @@
             0,
             0,
             0});
+            this.quantity.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.quantity.Name = "quantity";
+            this.quantity.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.quantity.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
             // 
             // AddForm
