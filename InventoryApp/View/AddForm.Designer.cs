@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddForm));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.ProductName = new System.Windows.Forms.TextBox();
@@ -38,60 +39,43 @@
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(22, 32);
+            resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(75, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Product Name";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(22, 69);
+            resources.ApplyResources(this.label2, "label2");
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(46, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Quantity";
             // 
             // ProductName
             // 
-            this.ProductName.Location = new System.Drawing.Point(157, 32);
-            this.ProductName.MaxLength = 50;
+            resources.ApplyResources(this.ProductName, "ProductName");
             this.ProductName.Name = "ProductName";
-            this.ProductName.Size = new System.Drawing.Size(171, 20);
-            this.ProductName.TabIndex = 2;
             this.ProductName.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(203, 138);
+            resources.ApplyResources(this.button1, "button1");
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(125, 47);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Save";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // quantity
             // 
-            this.quantity.Location = new System.Drawing.Point(157, 69);
+            resources.ApplyResources(this.quantity, "quantity");
             this.quantity.Maximum = new decimal(new int[] {
             100000000,
             0,
             0,
             0});
             this.quantity.Name = "quantity";
-            this.quantity.Size = new System.Drawing.Size(171, 20);
-            this.quantity.TabIndex = 5;
             this.quantity.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
             // 
             // AddForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(363, 226);
             this.Controls.Add(this.quantity);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.ProductName);
@@ -103,7 +87,6 @@
             this.Name = "AddForm";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
-            this.Text = "Add New";
             this.Load += new System.EventHandler(this.AddForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.quantity)).EndInit();
             this.ResumeLayout(false);

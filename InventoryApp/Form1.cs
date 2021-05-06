@@ -80,11 +80,8 @@ namespace InventoryApp
             int? id = GetId();
             if (id != null)
             {
-                using(InventoryEntities db = new InventoryEntities()){
-                    items oItem = db.items.Find(id);
-                    db.items.Remove(oItem);
-                    db.SaveChanges();
-                }
+                View.Confirmation confirm = new View.Confirmation(id);
+                confirm.ShowDialog();
                 RefreshData();
             }
         }

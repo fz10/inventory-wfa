@@ -12,3 +12,4 @@ C:\Users\carlo\Documents\coding\omnicon-test\inventory\InventoryApp\InventoryApp
 C:\Users\carlo\Documents\coding\omnicon-test\inventory\InventoryApp\InventoryApp\obj\Debug\InventoryApp.exe
 C:\Users\carlo\Documents\coding\omnicon-test\inventory\InventoryApp\InventoryApp\obj\Debug\InventoryApp.pdb
 C:\Users\carlo\Documents\coding\omnicon-test\inventory\InventoryApp\InventoryApp\obj\Debug\InventoryApp.View.AddForm.resources
+C:\Users\carlo\Documents\coding\omnicon-test\inventory\InventoryApp\InventoryApp\obj\Debug\InventoryApp.View.Confirmation.resources
